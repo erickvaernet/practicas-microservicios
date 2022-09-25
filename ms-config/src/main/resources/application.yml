@@ -9,4 +9,6 @@ spring:
       server:
         git:
           default-label: main
-          uri: https://github.com/erickvaernet/ms-configuration-files
+          uri: https://github.com/erickvaernet/practicas-microservicios
+          searchPaths:
+            - configurations
