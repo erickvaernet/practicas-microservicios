@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,refresh
+  info:
+    env:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+    refresh:
+      enabled: true
+
+info:
+  app:
+    name: ms-product
+    description: "A little example of microservices"
+    version: 1.0.0
