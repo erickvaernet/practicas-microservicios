@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ms.iml" filepath="$PROJECT_DIR$/.idea/ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-catalog/ms-catalog.iml" filepath="$PROJECT_DIR$/ms-catalog/ms-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-config/ms-config.iml" filepath="$PROJECT_DIR$/ms-config/ms-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-erureka/ms-erureka.iml" filepath="$PROJECT_DIR$/ms-erureka/ms-erureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-gateway/ms-gateway.iml" filepath="$PROJECT_DIR$/ms-gateway/ms-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-product/ms-product.iml" filepath="$PROJECT_DIR$/ms-product/ms-product.iml" />
+    </modules>
+  </component>
+</project>
