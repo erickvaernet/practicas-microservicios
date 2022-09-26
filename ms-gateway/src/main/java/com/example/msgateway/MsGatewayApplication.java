@@ -7,8 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-@LoadBalancerClient(name = "ms-catalog", configuration = LoadBalancerConfig.class)
+@LoadBalancerClient(name = "ms-catalog", configuration= LoadBalancerConfig.class)
 public class MsGatewayApplication {
 
 	public static void main(String[] args) {
