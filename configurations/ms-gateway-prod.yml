@@ -4,11 +4,14 @@ server:
     gateway:
       routes:
         - id: productRoute
-          uri: lb://ms-product
+          uri: lb://ms-product/
           predicates:
             - Path=/products/**
+          filters:
+            - AddRequestHeader=custom-header, RequestTestHeader
+            - AddResponseHeader=custom-header, ResponseTestHeader
         - id: catalogRoute
-          uri: lb://ms-catalog
+          uri: lb://ms-catalog/
           predicates:
             - Path=/catalog/**
 
@@ -26,7 +29,7 @@ eureka:
 management:
   endpoints:
     exposure:
-      include: info, health, refresh
+      include: info, health, refresh, gateway
   info:
     env:
       enabled: true
@@ -36,6 +39,8 @@ management:
     health:
       enabled: true
     refresh:
+      enabled: true
+    gateway:
       enabled: true
 
 info:
