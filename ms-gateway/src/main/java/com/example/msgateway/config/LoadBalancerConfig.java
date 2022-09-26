@@ -1,4 +1,4 @@
-package com.example.mscatalog.config;
+package com.example.msgateway.config;
 
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.loadbalancer.core.RandomLoadBalancer;
@@ -8,13 +8,11 @@ import org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
-
-public class CustomLoadBalancerConfiguration {
+public class LoadBalancerConfig {
 
     @Bean
-    ReactorLoadBalancer<ServiceInstance> RandomLoadBalancer(Environment env, LoadBalancerClientFactory lc){
+    ReactorLoadBalancer<ServiceInstance> randomLoadBalancer(Environment env, LoadBalancerClientFactory lc){
         String name= env.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);
-        return  new RandomLoadBalancer(lc.getProvider(name, ServiceInstanceListSupplier.class),name);
-
+        return new RandomLoadBalancer(lc.getProvider(name, ServiceInstanceListSupplier.class),name);
     }
 }

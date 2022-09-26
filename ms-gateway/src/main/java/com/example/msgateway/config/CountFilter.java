@@ -22,16 +22,16 @@ public class CountFilter extends AbstractGatewayFilterFactory<CountFilter.Config
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) ->
         {
+            //Preprocesado, cuando la request entra
             loger.info("Request vino de: "+exchange.getRequest().getPath());
             return chain.filter(exchange).then(Mono.fromRunnable(()->{
+                //Postprocesado, Cuando sale el response
                 loger.info("Tiempo respuesta: "+ Calendar.getInstance().getTime());
             }));
         });
     }
 
     public static class Config{
-
-
     }
 
 }
