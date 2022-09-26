@@ -4,14 +4,14 @@ server:
     gateway:
       routes:
         - id: productRoute
-          uri: lb://ms-product/
+          uri: lb://ms-product
           predicates:
             - Path=/products/**
           filters:
             - AddRequestHeader=custom-header, RequestTestHeader
             - AddResponseHeader=custom-header, ResponseTestHeader
         - id: catalogRoute
-          uri: lb://ms-catalog/
+          uri: lb://ms-catalog
           predicates:
             - Path=/catalog/**
 

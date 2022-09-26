@@ -10,12 +10,16 @@ import reactor.core.publisher.Mono;
 import java.util.Calendar;
 
 @Component
-public class CountFilter extends AbstractGatewayFilterFactory<CountFilter> {
+public class CountFilter extends AbstractGatewayFilterFactory<CountFilter.Config> {
 
     public static Logger loger= LoggerFactory.getLogger(CountFilter.class);
 
+    public CountFilter() {
+        super(Config.class);
+    }
+
     @Override
-    public GatewayFilter apply(CountFilter config) {
+    public GatewayFilter apply(Config config) {
         return ((exchange, chain) ->
         {
             loger.info("Request vino de: "+exchange.getRequest().getPath());
@@ -25,7 +29,9 @@ public class CountFilter extends AbstractGatewayFilterFactory<CountFilter> {
         });
     }
 
-    public CountFilter(Class<CountFilter> configClass) {
-        super(configClass);
+    public static class Config{
+
+
     }
+
 }
