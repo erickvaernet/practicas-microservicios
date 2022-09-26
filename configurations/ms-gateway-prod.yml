@@ -4,6 +4,8 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+        - name:CountFilter
       routes:
         - id: productRoute
           uri: lb://ms-product
